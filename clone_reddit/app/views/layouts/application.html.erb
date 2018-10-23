@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<style media="screen">
+  html {
+    background-color: #f4bae6;
+  }
+</style>
+
+<html>
+  <head>
+    <title>CloneReddit</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if logged_in? %>
+      <%= current_user.username %>
+        <form class="" action="<%= session_url %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+        <%= auth %>
+        <input type="submit" name="" value="Log Out">
+        </form>
+      <% else %>
+        <a href="<%= new_session_url %>">Sign In</a>
+        <a href="<%= new_user_url %>">Sign Up</a>
+      <% end %>
+
+
+
+    <% if flash[:errors] %>
+    <ul>
+      <% flash[:errors].each do |error| %>
+      <li><%= error %></li>
+      <% end %>
+    </ul>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

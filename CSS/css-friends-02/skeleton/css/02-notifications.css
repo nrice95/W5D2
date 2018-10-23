@@ -1,0 +1,22 @@
+/* PHASE 2: Notifications */
+.badge {
+  background-color: black;
+  border-radius: 50%;
+	width: 15px;
+	height: 5px;
+}
+.sub-list {
+  position: absolute;
+  top: 40px;
+  background-color: darkgrey;
+}
+
+.list_tags li:first-of-type {
+  border-left: 1px solid white;
+  padding: 10%;
+  position: relative;
+}
+
+.list_tags li:first-of-type:hover{
+
+}
